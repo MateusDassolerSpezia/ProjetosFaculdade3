@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
@@ -5,6 +6,7 @@
 package test;
 
 import model.ListaEstaticaGenerica;
+import model.Pessoa;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -119,6 +121,26 @@ public class ListaEstaticaTeste {
         lista.inserir(25);
         lista.inverter();
         assertEquals(lista.toString(), "25, 20, 15, 10, 5");
+    }
+    
+    @Test
+    public void Teste12() {
+        ListaEstaticaGenerica<Pessoa> pessoas = new ListaEstaticaGenerica<Pessoa>();
+        pessoas.inserir(new Pessoa("P1", 10));
+        Pessoa p = new Pessoa("P2", 20);
+        pessoas.inserir(p);
+        pessoas.inserir(new Pessoa("P3", 30));
+        assertEquals(pessoas.getTamanho(), 3);
+        
+        String dados = "Pessoa{nome=P1, idade=10}, " + "Pessoa{nome=P2, idade=20}, " + "Pessoa{nome=P3, idade=30}";
+        assertEquals(pessoas.toString(), dados);
+        
+        int pBusca = pessoas.buscar(p);
+        assertEquals(1, pBusca);
+        
+        pessoas.retirar(p);
+        dados = "Pessoa{nome=P1, idade=10}, " + "Pessoa{nome=P3, idade=30}";
+        assertEquals(pessoas.toString(), dados);
     }
     
 }

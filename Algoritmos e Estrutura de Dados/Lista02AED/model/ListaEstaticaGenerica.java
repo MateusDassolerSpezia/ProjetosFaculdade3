@@ -16,15 +16,14 @@ public class ListaEstaticaGenerica<T> {
     private int tamanho;
 
     public ListaEstaticaGenerica() {
-        info = (T[]) new Object[10];
-        tamanho = 0;
-        //liberar();
+        //info = (T[]) new Object[10];
+        //tamanho = 0;
+        liberar();
     }
 
     private void redimensionar() {
         T[] novo;
-        int novoTamanho = info.length + 10;
-        novo = (T[]) new Object[novoTamanho];
+        novo = (T[]) new Object[tamanho + 10];
         for (int i = 0; i <= tamanho - 1; i++) {
             novo[i] = info[i];
         }
@@ -32,20 +31,21 @@ public class ListaEstaticaGenerica<T> {
     }
 
     public void inserir(T valor) {
-        if (tamanho == info.length) {
+        if (info.length == tamanho) {
             redimensionar();
         } //else 
+        //info[tamanho++] = valor;
         info[tamanho] = valor;
         tamanho++;
 
     }
 
     public void exibir() {
-        String numeros = "";
+        /*String numeros = "";
         for (int i = 0; i < tamanho; i++) {
             numeros += info[i] + " ";
-        }
-        JOptionPane.showMessageDialog(null, numeros); // para vetores pequenos
+        }*/
+        JOptionPane.showMessageDialog(null, toString()); // para vetores pequenos
     }
 
     public int buscar(T valor) {
@@ -58,10 +58,15 @@ public class ListaEstaticaGenerica<T> {
     }
 
     public void retirar(T valor) {
+        /*int indiceValor = -1;
+        for (int i = 0; i < tamanho; i++) {
+            if (valor == info[i]) {
+                indiceValor = i;
+            }
+        }*/
         int indiceValor = buscar(valor);
 
         if (indiceValor != -1) {
-
             for (int i = indiceValor; i < tamanho - 1; i++) {
                 info[i] = info[i + 1];
             }
@@ -70,15 +75,15 @@ public class ListaEstaticaGenerica<T> {
     }
 
     public void liberar() {
-        tamanho = 0;
         info = (T[]) new Object[10];
+        tamanho = 0;
     }
 
-    public T obterElemento(int posicao) {
+    @SuppressWarnings("unchecked")
+    public T obterElemento(int posicao) throws IndexOutOfBoundsException {
         if (posicao < tamanho) {
-            return info[posicao];
+            return (T) info[posicao];
         }
-
         throw new IndexOutOfBoundsException();
     }
 
@@ -96,27 +101,36 @@ public class ListaEstaticaGenerica<T> {
     }
 
     public String toString() {
-        String numeros = "";
+        String s = "";
         for (int i = 0; i < tamanho; i++) {
-            numeros += info[i];
+            s += info[i];
             if (i < tamanho - 1) {
-                numeros += ", ";
+                s += ", ";
             }
         }
-        return numeros;
+        /*for (int i = 0; i < tamanho; i++) {
+            s += info[i].toString() + ", ";
+        }*/
+        return s;
     }
 
     public void inverter() {
-        int i = 0;
-        int j = tamanho - 1;
+        for (int i = 0; i < tamanho / 2; i++) {
+            @SuppressWarnings("unchecked")
+            T n = (T) info[i];
+            info[i] = info[tamanho - 1 - i];
+            info[tamanho - 1 - i] = n;
+        }
 
+        /*int i = 0;
+        int j = tamanho - 1;
         while (i < j) {
             T temp = info[i];  // Guarda o valor temporariamente
             info[i] = info[j]; // Troca os elementos
             info[j] = temp;    // Finaliza a troca
             i++;
             j--;
-        }
+        }*/
     }
 
 }
