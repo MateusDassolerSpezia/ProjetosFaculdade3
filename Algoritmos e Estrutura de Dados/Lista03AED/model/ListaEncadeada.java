@@ -53,29 +53,39 @@ public class ListaEncadeada<T> {
         if (p != null) {
             if (p == primeiro) {
                 primeiro = p.getProximo();
+            } else {
+                anterior.setProximo(p.getProximo());
             }
-            anterior.setProximo(p.getProximo());
         }
     }
 
     public int obterComprimento() {
-        return 0;
+        int comprimento = 0;
+        NoLista p = primeiro;
+        while (p != null) {
+            p = p.getProximo();
+            comprimento++;
+        }
+        return comprimento;
     }
 
     public NoLista obterNo(int idx) {
-        return null;
+        NoLista p = primeiro;
+        p.setInfo(idx);
+        return p;
     }
 
     public String toString() {
+        String S = "";
         NoLista p = primeiro;
         while (p != null) {
-            System.out.println(p.getInfo());
-            while (p.getProximo() != null) {
-                System.out.println(", ");
+            S += p.getInfo();
+            if (p.getProximo() != null) {
+                S += (", ");
             }
             p = p.getProximo();
         }
-        return null;
+        return S;
     }
 
 }
