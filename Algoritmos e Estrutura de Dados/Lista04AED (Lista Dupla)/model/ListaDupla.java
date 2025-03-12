@@ -57,10 +57,11 @@ public class ListaDupla<T> {
     }
 
     public void exibirOrdemInversa() {
-        NoListaDupla no = primeiro;
-        while (no != null) {
+        NoListaDupla p = primeiro;
+        while (p != null) {
             
-            no = no.getProximo();
+            
+            p = p.getProximo();
         }
     }
 
@@ -68,7 +69,6 @@ public class ListaDupla<T> {
         NoListaDupla no = primeiro;
         while (no != null) {
             no.setProximo(null);
-            no.setAnterior(null);
             no = no.getProximo();
         }
     }

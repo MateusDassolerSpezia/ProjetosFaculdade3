@@ -85,5 +85,20 @@ public class ListaDuplaTeste {
         lista.inserir(10);
         lista.inserir(15);
         lista.inserir(20);
+        assertEquals("20, 15, 10, 5", lista.toString());
+        lista.liberar();
+        assertEquals(null, lista.toString());
+    }
+
+
+    @Test
+    public void Teste08() {
+        lista.inserir(5);
+        lista.inserir(10);
+        lista.inserir(15);
+        lista.inserir(20);
+        lista.exibirOrdemInversa();
+        assertEquals("5, 10, 15, 20", lista.toString());
+
     }
 }
