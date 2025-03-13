@@ -8,12 +8,11 @@ package model;
  *
  * @author mdspezia
  */
-public class ListaDupla<T> {
-
+public class ListaCircularDupla<T> {
     private NoListaDupla primeiro;
     private NoListaDupla ultimo;
 
-    public ListaDupla() {
+    public ListaCircularDupla() {
         primeiro = null;
         ultimo = null;
     }
@@ -24,7 +23,7 @@ public class ListaDupla<T> {
 
     public NoListaDupla getUltimo() {
         NoListaDupla p = primeiro;
-        while (p.getProximo() != null) {
+        while (p.getProximo() != ultimo) {
             p = p.getProximo();
         }
         return p;
@@ -34,7 +33,7 @@ public class ListaDupla<T> {
         NoListaDupla<T> novo = new NoListaDupla<T>();
         novo.setInfo(valor);
         novo.setProximo(primeiro);
-        novo.setAnterior(null);
+        novo.setAnterior(ultimo);
         if (primeiro != null) {
             primeiro.setAnterior(novo);
         }
@@ -43,7 +42,7 @@ public class ListaDupla<T> {
 
     public NoListaDupla buscar(T valor) {
         NoListaDupla no = primeiro;
-        while (no != null) {
+        while (no.getProximo() != primeiro) {
             if (no.getInfo() == valor) {
                 return no;
             }
@@ -61,7 +60,7 @@ public class ListaDupla<T> {
                 no.getAnterior().setProximo(no.getProximo());
             }
         }
-        if (no.getProximo() != null) {
+        if (no.getProximo() != ultimo) {
             no.getProximo().setAnterior(no.getAnterior());
         }
     }
@@ -69,9 +68,9 @@ public class ListaDupla<T> {
     public String exibirOrdemInversa() {
         String S = "";
         NoListaDupla p = getUltimo();
-        while (p != null) {
+        while (p != ultimo) {
             S += p.getInfo();
-            if (p.getAnterior() != null) {
+            if (p.getAnterior() != ultimo) {
                 S += (", ");
             }
             p = p.getAnterior();
@@ -81,7 +80,7 @@ public class ListaDupla<T> {
 
     public void liberar() {
         NoListaDupla no = primeiro;
-        while (no != null) {
+        while (no != primeiro) {
             no.setProximo(null);
             no = no.getProximo();
         }
@@ -91,9 +90,9 @@ public class ListaDupla<T> {
     public String toString() {
         String S = "";
         NoListaDupla p = primeiro;
-        while (p != null) {
+        while (p != ultimo) {
             S += p.getInfo();
-            if (p.getProximo() != null) {
+            if (p.getProximo() != ultimo) {
                 S += (", ");
             }
             //p.setProximo(p.getProximo());

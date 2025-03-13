@@ -4,7 +4,7 @@
  */
 package test;
 
-import model.ListaDupla;
+import model.ListaCircularDupla;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,13 +13,13 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author mdspezia
  */
-public class ListaDuplaTeste {
-    
-    private static ListaDupla lista;
-    
+public class ListaCircularTeste {
+
+    private static ListaCircularDupla lista;
+
     @BeforeEach
     public void setUp() {
-        lista = new ListaDupla();
+        lista = new ListaCircularDupla();
     }
 
     @Test
@@ -30,7 +30,7 @@ public class ListaDuplaTeste {
         lista.inserir(20);
         assertEquals("20, 15, 10, 5", lista.toString());
     }
-    
+
     @Test
     public void Teste02() {
         lista.inserir(5);
@@ -39,7 +39,7 @@ public class ListaDuplaTeste {
         lista.inserir(20);
         assertEquals("20", lista.buscar(20).getInfo().toString());
     }
-    
+
     @Test
     public void Teste03() {
         lista.inserir(5);
@@ -48,7 +48,7 @@ public class ListaDuplaTeste {
         lista.inserir(20);
         assertEquals("15", lista.buscar(15).getInfo().toString());
     }
-    
+
     @Test
     public void Teste04() {
         lista.inserir(5);
@@ -58,7 +58,7 @@ public class ListaDuplaTeste {
         lista.retirar(20);
         assertEquals("15, 10, 5", lista.toString());
     }
-    
+
     @Test
     public void Teste05() {
         lista.inserir(5);
@@ -68,7 +68,7 @@ public class ListaDuplaTeste {
         lista.retirar(10);
         assertEquals("20, 15, 5", lista.toString());
     }
-    
+
     @Test
     public void Teste06() {
         lista.inserir(5);
@@ -78,7 +78,7 @@ public class ListaDuplaTeste {
         lista.retirar(5);
         assertEquals("20, 15, 10", lista.toString());
     }
-    
+
     @Test
     public void Teste07() {
         lista.inserir(5);
@@ -89,7 +89,6 @@ public class ListaDuplaTeste {
         lista.liberar();
         assertEquals("", lista.toString());
     }
-
 
     @Test
     public void Teste08() {
