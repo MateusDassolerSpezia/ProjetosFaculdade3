@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('../fontes/Oswald-VariableFont_wght.ttf');
+}
+
+body {
+    margin: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    font-size: 2em; /*em = tamanho original*/
+    background-color: lightblue;
+    padding: 10px;
+    font-weight: bold;
+}
+
+footer {
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.75;
+    /*font-family: 'Courier New', Courier, monospace;*/
+    font-family: MinhaFonte;
+}
+
+img {
+    width: 99vw; /*ou 100%*/
+}
+
+#div_img {
+    width: 50%;
+    border: 1px solid black;
+    height: 50%;
+    overflow: auto;
+}
+
+#nova_div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    width: 60%;
+    height: 50vh;
+    overflow: auto;
+}
+
+.classe2 {
+    font-weight: bold;
+    background-color: aquamarine !important;
+}
+
+.classe1 {
+    background-color: yellow;
+}
+
+p.classe1{
+    font-style: italic
+}
+
+#section_id {
+    font-size: 1.5em;
+}
+
+
+.big-shoulders-stencil-fonte {
+    font-family: "Big Shoulders Stencil", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
