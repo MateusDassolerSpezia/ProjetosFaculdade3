@@ -7,6 +7,12 @@ header {
 form {
     background-color: lightgray;
     border: 1px solid black;
+    padding: 5px;
+}
+
+#botaoSubmit, #botaoReset {
+    background-color: green;
+    color: white;
 }
 
 td {
