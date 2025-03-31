@@ -4,6 +4,40 @@
     src: url('../fontes/Oswald-VariableFont_wght.ttf');
 }
 
+@media screen and (max-width: 412px) {
+    #menuEstreito {
+        display: block;
+    }
+    #menuLargo {
+        display: none;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .flex-container > div {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 413px) {
+    #menuEstreito {
+        display: none;
+    }
+    #menuLargo {
+        display: block;
+    }
+
+    .flex-container {
+        flex-direction: row;
+    }
+
+    .flex-container > div {
+        width: 3em;
+    }
+}
+
 body {
     margin: 1px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -22,6 +56,10 @@ header {
 nav {
     background-color: lightskyblue;
     padding: 10px;
+}
+
+nav img {
+    width: 24px;
 }
 
 nav menu {
@@ -234,4 +272,56 @@ p.classe1{
 .tabela td:active {
     background-color: black;
     color: white;
+}
+
+.lista li:first-child {
+    font-weight: bold;
+}
+
+.lista li:last-child {
+    font-weight: bold;
+    color: blue;
+}
+
+.tabela2 tr:nth-child(2){
+    background-color: lightgreen;
+}
+
+/*odd/even/xn*/
+.tabela2 tr:nth-child(3n) {
+    background-color: lightgray;
+}
+
+.flex-container {
+    background-color: blue;
+    display: flex;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    /*height: 50vh;*/
+}
+
+.flex-container > div {
+    background-color: silver;
+    width: 3em;
+    /*height: 1.5em;*/
+    text-align: center;
+    margin: 10px;
+}
+
+.grid-container {
+    background-color: green;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+    justify-content: space-evenly;
+}
+
+.grid-container > div {
+    background-color: silver;
+    text-align: center;
+    /*width: 3em;*/
+    padding: 10px;
+    margin: 10px;
 }
