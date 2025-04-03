@@ -101,4 +101,19 @@ public class ListaDupla<T> {
         }
         return S;
     }
+    
+    public ListaDupla clonar() {
+        NoListaDupla no = getUltimo(); 
+        ListaDupla clone = new ListaDupla();      
+        while (no != null) {
+            clone.inserir(no.getInfo());
+            no = no.getAnterior();
+        }
+        return clone;
+        /*- Primeiramente eu criei um no que começa pelo ultimo elemento da lista original, pois na lista encadeada o primeiro elemento inserido é o ultimo da lista.
+        - Então, criei uma nova ListaDupla chamada clone para alocar os valores da lista original.
+        - Por sequente, criei um While que funciona enquanto o no for diferente de null para poder percorrer a lista inteira, dentro desse While eu utilizei o método inserir 
+        para poder inserir a informação que tinha no nó da lista original para a nova lista. Após isso, fiz o nó pegar a informação anterior a ele, já que começei do último.
+        - Finalmente, dei um return na nova lista.*/
+    }
 }
