@@ -7,6 +7,7 @@ package model;
 /**
  *
  * @author mdspezia
+ *
  */
 public class ListaEncadeada<T> {
 
@@ -37,6 +38,7 @@ public class ListaEncadeada<T> {
             if (p.getInfo() == info) {
                 return p;
             }
+            //p.setProximo(p.getProximo());
             p = p.getProximo();
         }
         return null;
@@ -48,6 +50,7 @@ public class ListaEncadeada<T> {
 
         while (p != null && p.getInfo() != info) {
             anterior = p;
+            //p.setProximo(p.getProximo());
             p = p.getProximo();
         }
         if (p != null) {
@@ -63,16 +66,25 @@ public class ListaEncadeada<T> {
         int comprimento = 0;
         NoLista p = primeiro;
         while (p != null) {
+            //p.setProximo(p.getProximo());
             p = p.getProximo();
             comprimento++;
         }
         return comprimento;
     }
 
-    public NoLista obterNo(int idx) {
-        NoLista p = primeiro;
-        p.setInfo(idx);
-        return p;
+    public NoLista obterNo(int idx) throws IndexOutOfBoundsException {
+        int indice = 0;
+        NoLista no = primeiro;
+        while (no != null) {
+            if (indice == idx) {
+                return no;
+            }
+            indice++;
+            //p.setProximo(p.getProximo());
+            no = no.getProximo();
+        }
+        throw new IndexOutOfBoundsException();
     }
 
     public String toString() {
@@ -83,9 +95,28 @@ public class ListaEncadeada<T> {
             if (p.getProximo() != null) {
                 S += (", ");
             }
+            //p.setProximo(p.getProximo());
             p = p.getProximo();
         }
         return S;
     }
 
+    public ListaEncadeada<T> criarSublista(int inicio, int fim) throws IndexOutOfBoundsException {
+        NoLista no = primeiro;
+        ListaEncadeada sublista = new ListaEncadeada();
+        int i = 0;
+        if (inicio > 0 || inicio < obterComprimento() || fim > 0 || fim < obterComprimento()) { // inverti as comprarações de maior e menor pois do jeito que estava elas levavam direto para a exceção no caso de valores corretos 
+            while (fim != i - 1) { // tive q colocar o -1 pois o While terminava em um nó antes do necessário
+                while (inicio > i) {
+                    no = no.getProximo();
+                    i++;
+                }
+                sublista.inserir(no.getInfo());
+                no = no.getProximo();
+                i++;
+            }
+            return sublista;
+        }
+        throw new IndexOutOfBoundsException();
+    }
 }
