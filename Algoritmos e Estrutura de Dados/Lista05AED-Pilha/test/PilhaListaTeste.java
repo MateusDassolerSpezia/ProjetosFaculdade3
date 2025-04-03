@@ -5,10 +5,7 @@
 package test;
 
 import modelLista.PilhaLista;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,40 +15,50 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class PilhaListaTeste {
     
-    /*private static PilhaLista pilha;
+    private static PilhaLista pilha;
     
     @BeforeEach
     public void setUp() {
         pilha = new PilhaLista();
-    }*/
+    }
     
     @Test
     public void Test01() {
-        PilhaLista pilha = new PilhaLista();
         assertTrue(pilha.estaVazia());
     }
     
     @Test
     public void Test02() {
-        PilhaLista pilha = new PilhaLista();
+        pilha.push(10);
         assertFalse(pilha.estaVazia());
     }
     
     @Test
     public void Test03() {
-        PilhaLista pilha = new PilhaLista();
+        pilha.push(10);
+        pilha.push(20);
+        pilha.push(30);
+        assertEquals(pilha.pop(), 30);
+        assertEquals(pilha.pop(), 20);
+        assertEquals(pilha.pop(), 10);
         assertTrue(pilha.estaVazia());
     }
     
     @Test
     public void Test04() {
-        PilhaLista pilha = new PilhaLista();
-        assertTrue(pilha.estaVazia());
+        pilha.push(10);
+        pilha.push(20);
+        pilha.push(30);
+        assertEquals(pilha.peek(), 30);
+        assertEquals(pilha.pop(), 30);
     }
     
     @Test
     public void Test05() {
-        PilhaLista pilha = new PilhaLista();
+        pilha.push(10);
+        pilha.push(20);
+        pilha.push(30);
+        pilha.liberar();
         assertTrue(pilha.estaVazia());
     }
 }

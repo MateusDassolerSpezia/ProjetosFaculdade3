@@ -93,7 +93,7 @@ public class PilhaVetorTeste {
         PilhaVetor pilha2 = new PilhaVetor(5);
         pilha2.push(40);
         pilha2.push(50);
-        pilha.concatenar(pilha);
-        assertEquals(pilha.toString(), 1);
+        pilha.concatenar(pilha2);
+        assertEquals(pilha.toString(), "50, 40, 30, 20, 10");
     }
 }
