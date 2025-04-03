@@ -16,17 +16,17 @@ public class PilhaVetor<T> implements Pilha<T> {
 
     public PilhaVetor(int limite) {
         this.limite = limite;
-        info = (T[]) new Object[limite];
-        tamanho = 0;
+        this.info = (T[]) new Object[limite];
+        this.tamanho = 0;
     }
 
     @Override
-    public void push(T valor) throws PilhaCheiaException {
+    public void push(T info) throws PilhaCheiaException {
         if (limite == tamanho) {
             throw new PilhaCheiaException();
         }
-        this.info[tamanho] = valor;
-        tamanho++;
+        this.info[tamanho] = info;
+        this.tamanho++;
     }
 
     @Override
@@ -34,14 +34,14 @@ public class PilhaVetor<T> implements Pilha<T> {
         if (estaVazia()) {
             throw new PilhaVaziaException();
         }
-        T valor;
-        valor = peek();
-        tamanho--;
+        T valor = peek();
+        this.info[tamanho] = null;
+        this.tamanho--;
         return valor;
     }
 
     @Override
-    public T peek() throws PilhaVaziaException{
+    public T peek() throws PilhaVaziaException {
         if (estaVazia()) {
             throw new PilhaVaziaException();
         }
@@ -59,20 +59,35 @@ public class PilhaVetor<T> implements Pilha<T> {
         info = (T[]) new Object[limite];
     }
 
+    @Override
     public String toString() {
-        String s = "";
+        String dados = "";
         for (int i = tamanho - 1; i >= 0; i--) {
-            s += info[i];
+            dados += info[i];
             if (i != 0) {
-                s += ", ";
+                dados += ", ";
             }
         }
-        return s;
+        return dados;
     }
 
-    public void concatenar(PilhaVetor<T> p) {
-        for (int i = tamanho - 1; i >= 0; i--) {
-            this.info[tamanho] = p.pop();
+    public void concatenar(PilhaVetor<T> p) throws PilhaCheiaException {
+        PilhaVetor<T> pAux = new PilhaVetor<>(p.info.length);
+
+        /*while(!p.estaVazia()) {
+            pAux.push(p.pop());
+        }*/
+        
+        if (this.tamanho + p.tamanho > limite) {
+            throw new PilhaCheiaException();
+        }
+        
+        for (int i = p.tamanho - 1; i >= 0; i--) {
+            pAux.push(p.info[i]);
+        }
+
+        while (!pAux.estaVazia()) {
+            this.push(pAux.pop());
         }
     }
 }

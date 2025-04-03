@@ -4,7 +4,6 @@
  */
 package modelLista;
 
-import modelVetor.*;
 
 /**
  *
@@ -13,17 +12,20 @@ import modelVetor.*;
 public class PilhaLista<T> implements Pilha<T> {
     
     private ListaEncadeada<T> lista;
+
+    public PilhaLista() {
+        this.lista = new ListaEncadeada();
+    }
     
     @Override
     public void push(T info) {
-        lista.inserir(info);
+        this.lista.inserir(info);
     }
     
     @Override
     public T pop() {
-        T valor;
-        valor = peek();
-        lista.retirar(valor);
+        T valor = peek();
+        this.lista.retirar(valor);
         return valor;
     }
     
@@ -32,8 +34,7 @@ public class PilhaLista<T> implements Pilha<T> {
         if(estaVazia()) {
             throw new PilhaVaziaException();
         }
-        lista.getPrimeiro().getInfo();
-        return (T) lista;
+        return (T) this.lista.getPrimeiro().getInfo();
     }
     
     @Override
@@ -43,6 +44,10 @@ public class PilhaLista<T> implements Pilha<T> {
     
     @Override
     public void liberar()  {
-        
+        lista = new ListaEncadeada();
+    }
+    
+    public String toString(){
+        return lista.toString();
     }
 }
