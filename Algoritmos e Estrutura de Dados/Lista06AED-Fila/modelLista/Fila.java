@@ -4,8 +4,6 @@
  */
 package modelLista;
 
-import modelVetor.*;
-
 /**
  *
  * @author Mateus

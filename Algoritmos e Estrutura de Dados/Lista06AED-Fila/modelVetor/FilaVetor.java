@@ -65,14 +65,14 @@ public class FilaVetor<T> implements Fila<T> {
     }
     
     public String toString() {
-        String s = "";
+        String dados = "";
         for (int i = inicio; i < tamanho; i++) {
-            s += info[i];
+            dados += info[i];
             if (i < tamanho - 1) {
-                s += ", ";
+                dados += ", ";
             }
         }
-        return s;
+        return dados;
     }
 
     public int getLimite() {

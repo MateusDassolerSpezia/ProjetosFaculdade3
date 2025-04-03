@@ -33,8 +33,7 @@ public class FilaLista<T> implements Fila<T> {
 
     @Override
     public T retirar() {
-        T valor;
-        valor = peek();
+        T valor = peek();
         lista.retirar(valor);
         return valor;
     }

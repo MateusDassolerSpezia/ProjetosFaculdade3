@@ -4,7 +4,6 @@
  */
 package modelLista;
 
-import modelVetor.*;
 
 /**
  *
