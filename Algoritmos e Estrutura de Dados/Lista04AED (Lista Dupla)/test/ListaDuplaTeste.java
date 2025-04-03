@@ -99,6 +99,19 @@ public class ListaDuplaTeste {
         lista.inserir(20);
         assertEquals("20, 15, 10, 5", lista.toString());
         assertEquals("5, 10, 15, 20", lista.exibirOrdemInversa());
-
+    }
+    
+    @Test
+    public void Teste09() {
+        //ListaEncadeada lista = new ListaEncadeada();
+        lista.inserir(70);
+        lista.inserir(60);
+        lista.inserir(50);
+        lista.inserir(40);
+        lista.inserir(30);
+        lista.inserir(20);
+        lista.inserir(10);
+        ListaDupla clone = lista.clonar();
+        assertEquals("10, 20, 30, 40, 50, 60, 70", clone.toString());
     }
 }
