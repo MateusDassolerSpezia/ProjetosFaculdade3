@@ -60,14 +60,40 @@ public class FilaVetor<T> implements Fila<T> {
         tamanho = 0;
     }
 
-    public FilaVetor criarFilaConcatenada(FilaVetor f2) {
-        return null;
+    public FilaVetor criarFilaConcatenada(FilaVetor<T> f2) {
+        FilaVetor f3 = new FilaVetor(f2.getLimite() + this.getLimite());
+        /*for (int i = 0; i <= this.tamanho - 1; i++) {
+            f3.inserir(this.info[i]);
+        }
+        for (int i = 0; i <= f2.tamanho - 1; i++) {
+            f3.inserir(f2.info[i]);
+        }*/
+        for (int i = 0; i < this.tamanho; i++) {
+            int pos = (this.inicio + i) % this.limite;
+            f3.inserir(this.info[pos]);
+        }
+
+        for (int i = 0; i < f2.tamanho; i++) {
+            int pos = (f2.inicio + i) % f2.limite;
+            f3.inserir(f2.info[pos]);
+        }
+        return f3;
     }
-    
+
+    @Override
     public String toString() {
-        String dados = "";
+        /*String dados = "";
         for (int i = inicio; i < tamanho; i++) {
             dados += info[i];
+            if (i < tamanho - 1) {
+                dados += ", ";
+            }
+        }
+        return dados;*/
+        String dados = "";
+        for (int i = 0; i < tamanho; i++) {
+            int pos = (inicio + i) % limite;
+            dados += info[pos];
             if (i < tamanho - 1) {
                 dados += ", ";
             }
@@ -78,5 +104,5 @@ public class FilaVetor<T> implements Fila<T> {
     public int getLimite() {
         return limite;
     }
-    
+
 }

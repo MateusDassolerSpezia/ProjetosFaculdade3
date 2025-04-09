@@ -16,10 +16,20 @@ public class ListaEncadeada<T> {
 
     public ListaEncadeada() {
         primeiro = null;
+        ultimo = null;
     }
 
     public NoLista getPrimeiro() {
         return primeiro;
+    }
+    
+    public NoLista getUltimo() {
+        /*NoLista p = primeiro;
+        while (p.getProximo() != null) {
+            p = p.getProximo();
+        }
+        return p;*/
+        return ultimo;
     }
 
     public void inserir(T info) {
@@ -27,6 +37,18 @@ public class ListaEncadeada<T> {
         novo.setInfo(info);
         novo.setProximo(primeiro);
         primeiro = novo;
+    }
+    
+    public void inserirNoFinal(T info) { //Fila
+        NoLista novo = new NoLista();
+        novo.setInfo(info);
+        novo.setProximo(null);
+        if(estaVazia()) {
+            primeiro = novo;
+        } else {
+            ultimo.setProximo(novo);
+        }
+        ultimo = novo;
     }
 
     public Boolean estaVazia() {
@@ -88,17 +110,5 @@ public class ListaEncadeada<T> {
             p = p.getProximo();
         }
         return S;
-    }
-
-    public void inserirNoFinal(T valor) {
-        NoLista novo = new NoLista();
-        novo.setInfo(valor);
-        novo.setProximo(null);
-        if (estaVazia()) {
-            primeiro = novo;
-        } else {
-            ultimo.setProximo(novo);
-        }
-        ultimo = novo;
     }
 }

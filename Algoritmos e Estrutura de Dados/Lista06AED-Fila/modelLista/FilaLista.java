@@ -11,6 +11,10 @@ package modelLista;
 public class FilaLista<T> implements Fila<T> {
 
     private ListaEncadeada lista;
+
+    public FilaLista() {
+        this.lista = new ListaEncadeada();
+    }  
     
     @Override
     public void inserir(T valor) {
@@ -19,7 +23,7 @@ public class FilaLista<T> implements Fila<T> {
 
     @Override
     public boolean estaVazia() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return lista.getPrimeiro() == null;
     }
 
     @Override
@@ -27,8 +31,7 @@ public class FilaLista<T> implements Fila<T> {
         if(estaVazia()) {
             throw new FilaVaziaException();
         }
-        //lista.
-        return null;
+        return (T) this.lista.getPrimeiro().getInfo();
     }
 
     @Override
@@ -40,10 +43,11 @@ public class FilaLista<T> implements Fila<T> {
 
     @Override
     public void liberar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        lista = new ListaEncadeada();
     }
     
+    @Override
     public String toString() {
-        return null;
+        return lista.toString();
     }
 }
