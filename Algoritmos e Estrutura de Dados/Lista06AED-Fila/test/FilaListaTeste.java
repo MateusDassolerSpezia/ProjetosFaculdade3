@@ -57,7 +57,6 @@ public class FilaListaTeste {
         fila.inserir(20);
         fila.inserir(30);
         fila.liberar();
-        assertTrue(fila.estaVazia());
+        assertTrue(fila.estaVazia()); 
     }
-    
 }

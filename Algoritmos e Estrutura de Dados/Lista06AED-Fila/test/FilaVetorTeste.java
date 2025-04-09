@@ -80,6 +80,38 @@ public class FilaVetorTeste {
     
     @Test
     public void Teste08() {
-        
+        FilaVetor f1 = new FilaVetor(8);
+        f1.inserir(10);
+        f1.inserir(20);
+        f1.inserir(30);
+        f1.inserir(40);
+        f1.inserir(50);
+        f1.retirar();
+        f1.retirar();
+        FilaVetor f2 = new FilaVetor(10);
+        f2.inserir(60);
+        f2.inserir(70);
+        f2.inserir(80);
+        f2.inserir(90);
+        f2.inserir(100);
+        f2.inserir(110);
+        f2.inserir(120);
+        f2.inserir(130);
+        f2.inserir(140);
+        f2.inserir(150);
+        f2.retirar();
+        f2.retirar();
+        f2.retirar();
+        f2.retirar();
+        f2.retirar();
+        f2.retirar();
+        f2.retirar();
+        f2.inserir(160);
+        f2.inserir(170);
+        FilaVetor f3 = f1.criarFilaConcatenada(f2);      
+        assertEquals(f3.toString(), "30, 40, 50, 130, 140, 150, 160, 170");
+        assertEquals(f1.toString(), "30, 40, 50");
+        assertEquals(f2.toString(), "130, 140, 150, 160, 170");
+        assertEquals(f3.getLimite(), 18);
     }
 }
