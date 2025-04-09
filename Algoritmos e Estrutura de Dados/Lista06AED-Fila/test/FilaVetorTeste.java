@@ -80,6 +80,22 @@ public class FilaVetorTeste {
     
     @Test
     public void Teste08() {
+        FilaVetor f1 = new FilaVetor(5);
+        f1.inserir(10);
+        f1.inserir(20);
+        f1.inserir(30);
+        FilaVetor f2 = new FilaVetor(3);
+        f2.inserir(40);
+        f2.inserir(50);
+        FilaVetor f3 = f1.criarFilaConcatenada(f2);      
+        assertEquals(f3.toString(), "10, 20, 30, 40, 50");
+        assertEquals(f1.toString(), "10, 20, 30");
+        assertEquals(f2.toString(), "40, 50");
+        assertEquals(f3.getLimite(), 8);
+    }
+    
+    @Test
+    public void Teste09() {
         FilaVetor f1 = new FilaVetor(8);
         f1.inserir(10);
         f1.inserir(20);
