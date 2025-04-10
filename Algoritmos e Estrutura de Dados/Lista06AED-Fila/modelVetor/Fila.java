@@ -10,9 +10,9 @@ package modelVetor;
  */
 public interface Fila<T> {
     
-    public void inserir(T valor);
-    public boolean estaVazia();
-    public T peek();
-    public T retirar();
-    public void liberar();
+    void inserir(T valor);
+    boolean estaVazia();
+    T peek();
+    T retirar();
+    void liberar();
 }
