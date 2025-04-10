@@ -34,7 +34,7 @@ public class FilaVetor<T> implements Fila<T> {
 
     @Override
     public boolean estaVazia() {
-        return tamanho == 0;
+        return this.tamanho == 0;
     }
 
     @Override
@@ -59,8 +59,8 @@ public class FilaVetor<T> implements Fila<T> {
         tamanho = 0;
     }
 
-    public FilaVetor criarFilaConcatenada(FilaVetor<T> f2) {
-        FilaVetor f3 = new FilaVetor(f2.getLimite() + this.getLimite());
+    public FilaVetor criarFilaConcatenada(FilaVetor f2) {
+        FilaVetor f3 = new FilaVetor(this.limite + f2.limite);
         /*for (int i = 0; i <= this.tamanho - 1; i++) {
             f3.inserir(this.info[i]);
         }
@@ -71,7 +71,6 @@ public class FilaVetor<T> implements Fila<T> {
             int pos = (this.inicio + i) % this.limite;
             f3.inserir(this.info[pos]);
         }
-
         for (int i = 0; i < f2.tamanho; i++) {
             int pos = (f2.inicio + i) % f2.limite;
             f3.inserir(f2.info[pos]);
