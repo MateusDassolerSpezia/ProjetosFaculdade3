@@ -116,7 +116,6 @@ public class ListaEstaticaGenerica<T> {
 
     public void inverter() {
         for (int i = 0; i < tamanho / 2; i++) {
-            @SuppressWarnings("unchecked")
             T n = (T) info[i];
             info[i] = info[tamanho - 1 - i];
             info[tamanho - 1 - i] = n;
