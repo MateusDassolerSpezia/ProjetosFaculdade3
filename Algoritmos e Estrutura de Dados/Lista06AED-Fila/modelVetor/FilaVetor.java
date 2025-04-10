@@ -27,8 +27,7 @@ public class FilaVetor<T> implements Fila<T> {
         if (limite == tamanho) {
             throw new FilaCheiaException();
         }
-        int posicaoInserir;
-        posicaoInserir = (inicio + tamanho) % limite;
+        int posicaoInserir = (inicio + tamanho) % limite;
         info[posicaoInserir] = valor;
         tamanho++;
     }
