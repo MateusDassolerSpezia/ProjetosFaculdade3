@@ -32,12 +32,8 @@ public class ArvoreBinaria<T> {
         if (no == null) {
             return false;
         } else {
-            return no.getInfo() == info || pertence((T) no.getEsquerda().getInfo()) || pertence((T) no.getDireita().getInfo());
+            return (no.getInfo() == info) || pertence(no.getEsquerda(), info) || pertence(no.getDireita(), info);
         }
-        /* (no.info = info)
-ou pertence(no.esq, info)
-ou pertence(no.dir, info);
-         */
     }
 
     @Override
@@ -50,10 +46,11 @@ ou pertence(no.dir, info);
     }
 
     public int contarNos() {
-        return 0;
+        return contarNos(raiz);
     }
 
     private int contarNos(NoArvoreBinaria no) {
-        return 0;
+        int contaNos = 0;
+        return contaNos;
     }
 }
