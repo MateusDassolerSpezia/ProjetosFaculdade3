@@ -38,19 +38,44 @@ public class ArvoreBinaria<T> {
 
     @Override
     public String toString() {
-        return null;
+        return arvorePre(raiz);
     }
 
-    private String arvorePre(NoArvoreBinaria no) {
-        return null;
+    private String arvorePre(NoArvoreBinaria no) { //Prova, fazer a arvorePos e a ordemSistematica
+        if (no == null) {
+            return "<>";
+        } else {
+            String esquerdaStr = arvorePre(no.getEsquerda()); //pega toda a esquerda até chegar no null
+            String direitaStr = arvorePre(no.getDireita()); //pega toda a direita até chegar no null
+            return "<" + no.getInfo() + esquerdaStr + direitaStr + ">"; //imprimi do ultimo elemento até a raiz
+        }
     }
+
+    /*public String toString(T valor) { //para a prova, imprimir a partir de um nó que não é a raiz
+        NoArvoreBinaria no = buscar(valor);
+        return arvorePre(no);
+    }
+
+    private NoArvoreBinaria buscar(NoArvoreBinaria no, T info) {
+        if (no == null) {
+            return null;
+        } else if (no.getInfo() == info) {
+            return no; || pertence(no.getEsquerda(), info) || pertence(no.getDireita(), info);
+        } else {
+
+        }
+    }*/
 
     public int contarNos() {
         return contarNos(raiz);
     }
 
     private int contarNos(NoArvoreBinaria no) {
-        int contaNos = 0;
-        return contaNos;
+        if (no == null) {
+            return 0;
+        } else {
+            return 1 + contarNos(no.getEsquerda()) + contarNos(no.getDireita());
+        }
     }
 }
+
