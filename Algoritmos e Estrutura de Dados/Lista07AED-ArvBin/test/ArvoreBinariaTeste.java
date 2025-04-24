@@ -44,7 +44,7 @@ public class ArvoreBinariaTeste {
         NoArvoreBinaria no3 = new NoArvoreBinaria(3, no5, no6);
         NoArvoreBinaria no1 = new NoArvoreBinaria(1, no2, no3);
         arv.setRaiz(no1);
-        
+        assertEquals(arv.toString(), "<1<2<><4<><>>><3<5<><>><6<><>>>>");
     }
     
     @Test
@@ -97,13 +97,25 @@ public class ArvoreBinariaTeste {
     
     @Test
     public void Teste08() {
+        NoArvoreBinaria raiz = new NoArvoreBinaria(1);
+        NoArvoreBinaria no2 = new NoArvoreBinaria(2);
+        NoArvoreBinaria no3 = new NoArvoreBinaria(3);
         NoArvoreBinaria no4 = new NoArvoreBinaria(4);
+        NoArvoreBinaria no5 = new NoArvoreBinaria(5);
+        NoArvoreBinaria no6 = new NoArvoreBinaria(6);
+        raiz.setEsquerda(no2);
+        no2.setDireita(no4);
+        raiz.setDireita(no3);
+        no3.setEsquerda(no5);
+        no3.setDireita(no6);
+        arv.setRaiz(raiz);
+        /*NoArvoreBinaria no4 = new NoArvoreBinaria(4);
         NoArvoreBinaria no2 = new NoArvoreBinaria(2, null, no4);
         NoArvoreBinaria no5 = new NoArvoreBinaria(5);
         NoArvoreBinaria no6 = new NoArvoreBinaria(6);
         NoArvoreBinaria no3 = new NoArvoreBinaria(3, no5, no6);
         NoArvoreBinaria no1 = new NoArvoreBinaria(1, no2, no3);
-        arv.setRaiz(no1);
+        arv.setRaiz(no1);*/
         assertEquals(arv.contarNos(), 6);
     }
 }
