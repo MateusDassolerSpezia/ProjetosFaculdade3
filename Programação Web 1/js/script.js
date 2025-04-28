@@ -17,3 +17,5 @@ function ativaClasse1() {
 function ativaClasse2() {
     document.getElementById('elemento_h3').classList.add('classe2');
 }
+
+//Teste do GitHub Desktop (Semana Acadêmica)
