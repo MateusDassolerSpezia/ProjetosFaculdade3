@@ -47,3 +47,35 @@ function criaInicio() {
     vElementoInput.value = '';
     vElementoInput.focus();
 }
+
+function removeItem() {
+    var vElementoPai = document.getElementById('listaTarefas');
+    vElementoPai.removeChild(vElementoPai.lastChild);
+}
+
+function removeTerceiro() {
+    var vElementoPai = document.getElementById('listaTarefas');
+    vElementoPai.removeChild(vElementoPai.children[2]);
+}
+
+function insereLinha() {
+    var vElementoTable = document.getElementById('tabela');
+
+    /*var vElementoLinha = document.createElement('tr');
+    var vElementoTD1 = document.createElement('td');
+    var vElementoTD2 = document.createElement('td');
+    var vElementoTD3 = document.createElement('td');*/
+
+    var vElementoLinha = vElementoTable.insertRow();
+    var vElementoTD1 = vElementoLinha.insertCell();
+    var vElementoTD2 = vElementoLinha.insertCell();
+    var vElementoTD3 = vElementoLinha.insertCell();
+    vElementoTD1.innerHTML = 'Cell 1';
+    vElementoTD2.innerHTML = 'Cell 2';
+    vElementoTD3.innerHTML = 'Cell 3';
+}
+
+function removeLinha() {
+    var vElementoTabela = document.getElementById('tabela');
+    vElementoTabela.deleteRow(-1);
+}
