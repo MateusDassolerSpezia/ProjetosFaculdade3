@@ -101,7 +101,20 @@
         <button onclick="document.getElementById('elemento_h3').classList.toggle('classe1')">Liga/desliga classe1</button>
         <button onclick="document.getElementById('elemento_h3').classList.toggle('classe2')">Liga/desliga classe2</button>
     </p>
+    <div id="novoP">
+        <button onclick="criaParagrafo()">Cria parágrafo</button>
+    </div>
+    <p>
+        <div>
+            <input type="text" id="itemTarefa" placeholder="Informe a tarefa">
+            <button onclick="criaTarefa()">Cria tarefa</button>
+            <button onclick="criaInicio()">Cria no início</button>
+        </div>
+        <div>
+            <h3>Lista de tarefas:</h3>
+            <ul id="listaTarefas"></ul>
+        </div>
+    </p>
 </body>
-<script src="js/script.js"></script>
-
+<script src="/js/script.js"></script>
 </html>

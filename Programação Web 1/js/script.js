@@ -18,4 +18,32 @@ function ativaClasse2() {
     document.getElementById('elemento_h3').classList.add('classe2');
 }
 
-//Teste do GitHub Desktop (Semana Acadêmica)
+function criaParagrafo() {
+    var vNovoParagrafo = document.createElement('p');
+    vNovoParagrafo.innerHTML = 'Novo parágrafo';
+    var vElementoPai = document.getElementById('novoP');
+    vElementoPai.appendChild(vNovoParagrafo);
+}
+
+function criaTarefa() {
+    var vElementoInput = document.getElementById('itemTarefa');
+    var vElementoLista = document.getElementById('listaTarefas');
+    var vItemLista = document.createElement('li');
+    vItemLista.innerHTML = vElementoInput.value;
+    vElementoLista.appendChild(vItemLista);
+
+    vElementoInput.value = '';
+    vElementoInput.focus();
+}
+
+function criaInicio() {
+    var vElementoInput = document.getElementById('itemTarefa');
+    var vElementoLista = document.getElementById('listaTarefas');
+    var vItemLista = document.createElement('li');
+    vItemLista.innerHTML = vElementoInput.value;
+
+    vElementoLista.insertBefore(vItemLista, vElementoLista.firstChild);
+
+    vElementoInput.value = '';
+    vElementoInput.focus();
+}
