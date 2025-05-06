@@ -50,21 +50,30 @@ public class ArvoreBinaria<T> {
             return "<" + no.getInfo() + esquerdaStr + direitaStr + ">"; //imprimi do ultimo elemento até a raiz
         }
     }
+//------------------------------------------------------------------------------------------------------------------------
 
-    /*public String toString(T valor) { //para a prova, imprimir a partir de um nó que não é a raiz
+    public String toString(T valor) { //para a prova, imprimir a partir de um nó que não é a raiz
         NoArvoreBinaria no = buscar(valor);
         return arvorePre(no);
     }
 
-    private NoArvoreBinaria buscar(NoArvoreBinaria no, T info) {
-        if (no == null) {
-            return null;
-        } else if (no.getInfo() == info) {
-            return no; || pertence(no.getEsquerda(), info) || pertence(no.getDireita(), info);
-        } else {
+    public NoArvoreBinaria buscar(T info) {
+        return buscar(raiz, info);
+    }
 
+    private NoArvoreBinaria buscar(NoArvoreBinaria no, T info) {
+        if (no == null) { //Confere se o no é nulo
+            return null; //Retorna nulo
+        } else if (no.getInfo() == info) { //Confere se o no em que se quer começar a imprimir é a raiz
+            return no; //Retorna o no da raiz
         }
-    }*/
+        NoArvoreBinaria esquerda = buscar(no.getEsquerda(), info); //Como no método "pertence", compara todos os nós da esquerda com nossa info
+        if (esquerda != null) { //if para poder colocar o return
+            return esquerda; //Retorna a posição do no se algum no da esquerda tiver a mesma info que foi passada
+        }
+        return buscar(no.getDireita(), info); //Como no método "pertence", compara os nós da direita com nossa info e retorna a posição do no se algum no da direita tiver a mesma info que foi passada
+    }
+//-------------------------------------------------------------------------------------------------------------------------
 
     public int contarNos() {
         return contarNos(raiz);
@@ -78,4 +87,3 @@ public class ArvoreBinaria<T> {
         }
     }
 }
-
