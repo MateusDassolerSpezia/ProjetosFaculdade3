@@ -48,7 +48,5 @@ public class NoArvoreBinaria<T> {
 
     public void setDireita(NoArvoreBinaria direita) {
         this.direita = direita;
-    }
-    
-    
+    }    
 }
