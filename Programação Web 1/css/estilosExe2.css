@@ -2,6 +2,19 @@ div {
     padding: 8px;
 }
 
+li:hover {
+    cursor: pointer;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}
+
+#corFundo:hover {
+    background-color: aquamarine
+}
+
 table {
     margin-left: 8px;
 }
@@ -17,11 +30,3 @@ td {
     background-color: red;
 }
 
-li:hover {
-    cursor: pointer;
-}
-
-li a {
-    text-decoration: none;
-    color: black;
-}

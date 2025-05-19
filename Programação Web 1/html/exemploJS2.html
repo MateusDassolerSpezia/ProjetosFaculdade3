@@ -15,13 +15,13 @@
     <div id="mensagem"></div>
 
     <script>
-        function mostraData() {
+        /*function mostraData() {
             document.getElementById('horaAtual').innerHTML = new Date();
-        }
+        }*/
 
         //vFuncao = mostraData;
 
-        vFuncao = () => document.getElementById('horaAtual').innerHTML = new Date();
+        //vFuncao = () => document.getElementById('horaAtual').innerHTML = new Date();
 
         //setInterval(vFuncao, 1000);
         setInterval(() => document.getElementById('horaAtual').innerHTML = new Date(), 1000);
