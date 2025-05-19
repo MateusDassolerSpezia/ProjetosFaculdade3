@@ -34,6 +34,18 @@ class Pessoa {
     }
 }
 
+interface Pessoa2 {
+    nome: string,
+    sobrenome: string,
+    cidade: string
+};
+
+var vPessoa2: Pessoa2 = {
+    nome: "Marcos",
+    sobrenome: "Cardoso",
+    cidade: "Blumenau"
+};
+
 var vPessoa: Pessoa = new Pessoa('Marcos', 'Cardoso', 'Blumenau');
 //vPessoa.nome = 'José';
 vPessoa.setNome('José');
