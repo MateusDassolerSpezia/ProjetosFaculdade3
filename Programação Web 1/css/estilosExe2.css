@@ -16,3 +16,8 @@ td {
 .tabela td:active {
     background-color: red;
 }
+
+li a {
+    text-decoration: none;
+    color: black;
+}
