@@ -1,5 +1,5 @@
 function olaMundo() {
-    return 'Olá, mundo'
+    return "Olá, mundo"
 }
 
 export {olaMundo};

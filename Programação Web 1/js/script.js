@@ -64,7 +64,14 @@ function insereLinha() {
     /*var vElementoLinha = document.createElement('tr');
     var vElementoTD1 = document.createElement('td');
     var vElementoTD2 = document.createElement('td');
-    var vElementoTD3 = document.createElement('td');*/
+    var vElementoTD3 = document.createElement('td');
+    vElementoTD1.innerHTML = 'Cell 1';
+    vElementoTD2.innerHTML = 'Cell 2';
+    vElementoTD3.innerHTML = 'Cell 3';
+    vElementoLinha.appendChild(vElementoTD1);
+    vElementoLinha.appendChild(vElementoTD2);
+    vElementoLinha.appendChild(vElementoTD3);
+    vElementoTable.appendChild(vElementoLinha);*/
 
     var vElementoLinha = vElementoTable.insertRow();
     var vElementoTD1 = vElementoLinha.insertCell();
