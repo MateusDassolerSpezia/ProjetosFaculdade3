@@ -103,4 +103,18 @@ public class FilaVetor<T> implements Fila<T> {
         return limite;
     }
 
+    public void encolher() {
+        T[] aux = (T[]) new Object[this.tamanho]; // Criei um vetor auxiliar com tamanho igual a quantidade de informações do vetor atual.
+        for (int i = 0; i < this.tamanho; i++) { // Fiz um for que utiliza a variavel this.tamanho como referência, para percorrer apenas de acordo com a quantidade de informações do vetor atual.
+            int pos = (this.inicio + i) % this.limite; // Utilizei essa conta pois, pela fila poder utilizar o vetor de forma circular, a primeira informação da fila não estará necessariamente no início do vetor.
+            aux[i] = this.info[pos]; // Armazenei as informações do vetor atual no vetor auxiliar, para poder fazer mudanças no vetor atual sem perder suas informações.
+        }
+        this.limite = this.tamanho; // Ajustei o limite do vetor atual para ser igual a quantidade de informações da fila.
+        this.info = (T[]) new Object[this.limite]; // Recriei o vetor da lista atual, utilizando o novo limite para o tamanho do vetor.
+        inicio = 0; // Zerei o início, pois quando a fila encolhe, a primeira informação vai para o início do vetor.
+        for (int i = 0; i < this.tamanho; i++) { // Fiz um for que utiliza a variavel this.tamanho como referência, para percorrer apenas de acordo com a quantidade de informações do vetor atual.
+            info[i] = aux[i]; // Passei as informações do vetor auxiliar para o vetor atual (recuperando seus elementos).
+        }
+    }
+
 }

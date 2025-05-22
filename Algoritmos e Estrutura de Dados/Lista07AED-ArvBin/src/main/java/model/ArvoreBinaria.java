@@ -87,4 +87,17 @@ public class ArvoreBinaria<T> {
             return 1 + contarNos(no.getEsquerda()) + contarNos(no.getDireita());
         }
     }
+    
+    public int contarFolhas(NoArvoreBinaria<T> sa) {
+        int contaFolhas = 0; // Variável para armazenar a quantidade de folhas.
+        if (sa == null || raiz.getEsquerda() == null && raiz.getDireita() == null) { // Se a árvore for nula ou se a raiz não tiver nenhum filho, vai retornar que a árvore possui 0 folhas.
+            return 0; // Retorna 0
+        } 
+        if (sa.getEsquerda() == null && sa.getDireita() == null) { // Se, ao percorrer a árvore, encontrar um nó que que apresenta nulo na esquerda e na direita, esse é um no folha. Assim, será incrementada a variavel contaFolhas.
+            contaFolhas++; // incrementa a quantidade de folhas.
+        }
+        return contaFolhas + contarFolhas(sa.getEsquerda()) + contarFolhas(sa.getDireita()); // Finalmente, retorna o valor armazenado na variável contaFolhas. Para isso ocorrer de maneira correta, utilizo a recursividade, chamando
+        //o método novamente enquanto pego as informações da esquerda e da direita da árvore até percorre-la por inteiro.
+    }
+    
 }

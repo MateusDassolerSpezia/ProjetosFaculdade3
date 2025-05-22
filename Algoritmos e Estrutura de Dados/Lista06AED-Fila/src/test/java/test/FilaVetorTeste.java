@@ -130,4 +130,28 @@ public class FilaVetorTeste {
         assertEquals(f2.toString(), "130, 140, 150, 160, 170");
         assertEquals(f3.getLimite(), 18);
     }
+    
+    @Test
+    public void Teste10() {
+        FilaVetor fila = new FilaVetor(10);
+        fila.inserir(10);
+        fila.inserir(20);
+        fila.inserir(30);
+        fila.inserir(1);
+        fila.inserir(2);
+        fila.inserir(3);
+        fila.inserir(4);
+        fila.retirar();
+        fila.retirar();
+        fila.retirar();
+        fila.inserir(5);
+        fila.inserir(6);
+        fila.inserir(7);
+        fila.inserir(8);
+        fila.inserir(9);
+        fila.encolher();
+        fila.retirar();
+        fila.inserir(5);
+        assertEquals(fila.toString(), "");
+    }
 }
