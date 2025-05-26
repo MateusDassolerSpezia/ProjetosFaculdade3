@@ -9,14 +9,17 @@
 </head>
 <body>
     <div>
-        <input type="text" id="texto" placeholder="Digite aqui">
+        <input type="text" id="texto" placeholder="Digite aqui" oninput="conteudo()">
         <button onclick="tamanhoCampo()">Tamanho do campo</button>
     </div>
-    <div id="textoCopiado">
-        a
+    <div>
+        <h4>Conteúdo:</h4>
+        <div id="textoCopiado"></div>
     </div>
-    <div id="tamanhoCampo">
-        a
+    <div>
+        <h4>Tamanho do campo:</h4>
+        <div id="tamanhoCampo"></div>
     </div>
 </body>
+    <script src="/js/scriptExe2.js"></script>
 </html>
