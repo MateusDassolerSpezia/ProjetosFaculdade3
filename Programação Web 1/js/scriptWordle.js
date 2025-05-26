@@ -1,4 +1,4 @@
-const secretWord = "fruta"; 
+const secretWord = "letra"; 
 let gameOver = false;
 
 function submitGuess() {
@@ -53,9 +53,12 @@ function submitGuess() {
   input.value = "";
 
   if (guess === secretWord) {
-    document.getElementById("message").textContent = "Você acertou a palavra!";
+    document.getElementById("message").textContent = "Palavra correta!";
     gameOver = true;
   }
+
+  input.focus();
+
 }
 
 function resetGame() {
