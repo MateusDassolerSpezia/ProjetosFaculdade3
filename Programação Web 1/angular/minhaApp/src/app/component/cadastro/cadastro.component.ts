@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Pessoa } from '../../interface/pessoa';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cadastro',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.css'
 })
@@ -27,8 +28,13 @@ export class CadastroComponent {
     },
     {
       nome: "Alexander",
-      sobrenome: "Valdemeri",
-      cidade: "Indaial"
+      sobrenome: "Valdameri",
+      cidade: "Joinville"
     }
   ]
+
+  mensagem: string = '';
+  tamanhoString(pString: string): void {
+    this.mensagem = pString + " possui " + pString.length + " caracteres"
+  }
 }

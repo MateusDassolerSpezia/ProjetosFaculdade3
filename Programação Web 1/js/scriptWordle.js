@@ -53,7 +53,7 @@ function submitGuess() {
   input.value = "";
 
   if (guess === secretWord) {
-    document.getElementById("message").textContent = "Parabéns! Você acertou a palavra!";
+    document.getElementById("message").textContent = "Você acertou a palavra!";
     gameOver = true;
   }
 }

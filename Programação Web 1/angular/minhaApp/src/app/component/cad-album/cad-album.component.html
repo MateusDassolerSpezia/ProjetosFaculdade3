@@ -1,0 +1,16 @@
+<div>
+    <button (click)="buscaAlbuns()">Carrega álbuns</button>
+</div>
+
+<div>
+    <table>
+        <tr *ngFor="let vAlbum of vetAlbum">
+            <td>{{vAlbum.id}}</td>
+            <td>{{vAlbum.userId}}</td>
+            <td>{{vAlbum.title}}</td>
+        </tr>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+<!--<p>&nbsp;</p>-->
