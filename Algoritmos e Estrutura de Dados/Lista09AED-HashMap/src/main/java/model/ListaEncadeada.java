@@ -48,7 +48,7 @@ public class ListaEncadeada<T> {
         NoLista anterior = null;
         NoLista p = primeiro;
 
-        while (p != null && p.getInfo() != info) {
+        while (p != null && !p.getInfo().equals(info)) {
             anterior = p;
             //p.setProximo(p.getProximo());
             p = p.getProximo();
