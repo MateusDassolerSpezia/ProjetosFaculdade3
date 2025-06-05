@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="test.MapaDispersaoTeste" time="0.049" tests="1" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="test.MapaDispersaoTeste" time="0.048" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,9 +15,9 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java21\bin"/>
-    <property name="sun.java.command" value="C:\Users\mdspezia\AppData\Local\Temp\surefire2494680004660692756\surefirebooter-20250529110715557_3.jar C:\Users\mdspezia\AppData\Local\Temp\surefire2494680004660692756 2025-05-29T11-07-15_457-jvmRun1 surefire-20250529110715557_1tmp surefire_0-20250529110715557_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\mdspezia\AppData\Local\Temp\surefire13178780537223873279\surefirebooter-20250605075817116_3.jar C:\Users\mdspezia\AppData\Local\Temp\surefire13178780537223873279 2025-06-05T07-58-17_025-jvmRun1 surefire-20250605075817116_1tmp surefire_0-20250605075817116_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="test.MapaDispersaoTeste#Teste01"/>
+    <property name="test" value="test.MapaDispersaoTeste"/>
     <property name="surefire.test.class.path" value="C:\Users\mdspezia\Documents\GitHub\ProjetosFaculdade3\Algoritmos e Estrutura de Dados\Lista09AED-HashMap\target\test-classes;C:\Users\mdspezia\Documents\GitHub\ProjetosFaculdade3\Algoritmos e Estrutura de Dados\Lista09AED-HashMap\target\classes;C:\Users\mdspezia\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\mdspezia\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\mdspezia\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\mdspezia\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\mdspezia\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\mdspezia\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\mdspezia\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\mdspezia"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\mdspezia\AppData\Local\Temp\surefire2494680004660692756\surefirebooter-20250529110715557_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\mdspezia\AppData\Local\Temp\surefire13178780537223873279\surefirebooter-20250605075817116_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+7-LTS"/>
@@ -61,12 +61,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="Teste01" classname="test.MapaDispersaoTeste" time="0.029">
-    <error message="Cannot invoke &quot;Object.equals(Object)&quot; because the return value of &quot;model.MapaDispersao.buscar(int)&quot; is null" type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Cannot invoke "Object.equals(Object)" because the return value of "model.MapaDispersao.buscar(int)" is null
-	at test.MapaDispersaoTeste.Teste01(MapaDispersaoTeste.java:33)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></error>
-  </testcase>
+  <testcase name="Teste01" classname="test.MapaDispersaoTeste" time="0.026"/>
+  <testcase name="Teste02" classname="test.MapaDispersaoTeste" time="0.001"/>
+  <testcase name="Teste03" classname="test.MapaDispersaoTeste" time="0.0"/>
+  <testcase name="Teste04" classname="test.MapaDispersaoTeste" time="0.001"/>
 </testsuite>

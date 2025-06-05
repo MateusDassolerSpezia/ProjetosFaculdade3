@@ -29,20 +29,22 @@ public class NoMapa<T> {
         this.info = info;
     }
 
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj == null) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        /*if (getClass() != obj.getClass()) {
             return false;
-        }
+        }*/
         NoMapa other = (NoMapa) obj;
-        if (chave != other.chave) {
+        /*if (chave != other.chave) {
             return false;
         }
-        return true;
+        return true;*/
+        return chave == other.chave;
     }
 }

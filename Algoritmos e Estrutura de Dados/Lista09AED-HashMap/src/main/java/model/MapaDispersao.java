@@ -27,6 +27,7 @@ public class MapaDispersao<T> {
         if (info[indice] == null) {
             info[indice] = new ListaEncadeada<>();
         }
+        
         NoMapa noMapa = new NoMapa();
         noMapa.setChave(chave);
         noMapa.setInfo(dado);
@@ -36,11 +37,11 @@ public class MapaDispersao<T> {
 
     public void remover(int chave) {
         int indice = calcularHash(chave);
-        
+
         if (info[indice] == null) {
             throw new RuntimeException("Essa chave não existe");
         }
-        
+
         NoMapa noMapa = new NoMapa();
         noMapa.setChave(chave);
 

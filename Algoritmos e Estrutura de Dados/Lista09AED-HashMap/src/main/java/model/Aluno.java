@@ -26,6 +26,18 @@ public class Aluno {
         return matricula;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Aluno other = (Aluno) obj;
+        return matricula == other.matricula;
+    }
+    
     public void setMatricula(int matricula) {
         this.matricula = matricula;
     }
