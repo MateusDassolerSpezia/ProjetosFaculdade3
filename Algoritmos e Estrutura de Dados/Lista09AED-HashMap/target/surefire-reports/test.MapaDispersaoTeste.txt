@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: test.MapaDispersaoTeste
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.049 s <<< FAILURE! -- in test.MapaDispersaoTeste
+test.MapaDispersaoTeste.Teste01 -- Time elapsed: 0.029 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "Object.equals(Object)" because the return value of "model.MapaDispersao.buscar(int)" is null
+	at test.MapaDispersaoTeste.Teste01(MapaDispersaoTeste.java:33)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
