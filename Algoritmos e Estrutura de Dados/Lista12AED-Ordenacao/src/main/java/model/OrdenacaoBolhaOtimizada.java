@@ -8,11 +8,25 @@ package model;
  *
  * @author mdspezia
  */
-public class OrdenacaoBolhaOtimizada<T> extends OrdenacaoAbstract<Object>{
+public class OrdenacaoBolhaOtimizada<T> extends OrdenacaoAbstract<T> {
 
     @Override
     public void ordernar() {
-        
+        int i, j;
+        int n = getInfo().length;
+        boolean trocou;
+
+        for (i = n - 1; i >= 1; i--) {
+            trocou = false;
+            for (j = 0; j < i; j++) {
+                if (getInfo()[j] > getInfo()[j + 1]) {
+                    trocar(j, j + 1);
+                    trocou = true;
+                }
+            }
+            if (!trocou/*trocou == false*/) {
+                return;
+            }
+        }
     }
-    
 }

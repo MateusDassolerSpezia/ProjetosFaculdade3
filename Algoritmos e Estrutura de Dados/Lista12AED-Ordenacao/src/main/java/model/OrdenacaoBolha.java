@@ -12,14 +12,14 @@ public class OrdenacaoBolha<T> extends OrdenacaoAbstract<T> {
 
     @Override
     public void ordernar() {
-        int i,j;
+        int i, j;
         int n = getInfo().length;
-        
-        for (i = n-1; i > 1; i--) {
-            for(j = 0; j > i-1; j++) {
-                
-                if(getInfo()[j] > getInfo()[j+1]) {
-                    trocar(j, j+1);
+
+        for (i = n - 1; i >= 1; i--) {
+            for (j = 0; j < i; j++) {
+
+                if (getInfo()[j] > getInfo()[j + 1]) {
+                    trocar(j, j + 1);
                 }
             }
         }
@@ -29,5 +29,4 @@ public class OrdenacaoBolha<T> extends OrdenacaoAbstract<T> {
     public int compareTo(Object o) {
         return this.getInfo();
     }*/
-    
 }
