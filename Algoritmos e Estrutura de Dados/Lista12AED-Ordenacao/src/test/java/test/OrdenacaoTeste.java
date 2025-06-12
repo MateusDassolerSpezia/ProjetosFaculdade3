@@ -4,41 +4,56 @@
  */
 package test;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
+import model.OrdenacaoBolha;
+import model.OrdenacaoBolhaOtimizada;
+import model.OrdenacaoMergeSort;
+import model.OrdenacaoQuickSort;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author mdspezia
+ * @author Mateus
  */
 public class OrdenacaoTeste {
-    
-    public OrdenacaoTeste() {
-    }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
+
+    @Test
+    public void Teste01() {
+        int vetor[] = {70, 2, 88, 15, 90, 30};
+        int vetorOrdenado[] = {2, 15, 30, 70, 88, 90};
+        OrdenacaoBolha ordBol = new OrdenacaoBolha();
+        ordBol.setInfo(vetor);
+        ordBol.ordernar();
+        assertArrayEquals(ordBol.getInfo(), vetorOrdenado);
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void Teste02() {
+        int vetor[] = {70, 2, 88, 15, 90, 30};
+        int vetorOrdenado[] = {2, 15, 30, 70, 88, 90};
+        OrdenacaoBolhaOtimizada ordBolOtm = new OrdenacaoBolhaOtimizada();
+        ordBolOtm.setInfo(vetor);
+        ordBolOtm.ordernar();
+        assertArrayEquals(ordBolOtm.getInfo(), vetorOrdenado);
+    }
+
+    @Test
+    public void Teste03() {
+        int vetor[] = {70, 2, 88, 15, 90, 30};
+        int vetorOrdenado[] = {2, 15, 30, 70, 88, 90};
+        OrdenacaoQuickSort ordQuiSor = new OrdenacaoQuickSort();
+        ordQuiSor.setInfo(vetor);
+        ordQuiSor.ordernar();
+        assertArrayEquals(ordQuiSor.getInfo(), vetorOrdenado);
+    }
+
+    @Test
+    public void Teste04() {
+        int vetor[] = {70, 2, 88, 15, 90, 30};
+        int vetorOrdenado[] = {2, 15, 30, 70, 88, 90};
+        OrdenacaoMergeSort ordMerSor = new OrdenacaoMergeSort();
+        ordMerSor.setInfo(vetor);
+        ordMerSor.ordernar();
+        assertArrayEquals(ordMerSor.getInfo(), vetorOrdenado);
+    }
 }
