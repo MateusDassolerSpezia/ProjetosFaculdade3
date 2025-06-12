@@ -19,8 +19,8 @@ public class OrdenacaoTeste {
 
     @Test
     public void Teste01() {
-        int vetor[] = {70, 2, 88, 15, 90, 30};
-        int vetorOrdenado[] = {2, 15, 30, 70, 88, 90};
+        Comparable vetor[] = {70, 2, 88, 15, 90, 30};
+        Comparable vetorOrdenado[] = {2, 15, 30, 70, 88, 90};
         OrdenacaoBolha ordBol = new OrdenacaoBolha();
         ordBol.setInfo(vetor);
         ordBol.ordernar();
@@ -29,8 +29,8 @@ public class OrdenacaoTeste {
 
     @Test
     public void Teste02() {
-        int vetor[] = {70, 2, 88, 15, 90, 30};
-        int vetorOrdenado[] = {2, 15, 30, 70, 88, 90};
+        Comparable vetor[] = {70, 2, 88, 15, 90, 30};
+        Comparable vetorOrdenado[] = {2, 15, 30, 70, 88, 90};
         OrdenacaoBolhaOtimizada ordBolOtm = new OrdenacaoBolhaOtimizada();
         ordBolOtm.setInfo(vetor);
         ordBolOtm.ordernar();
@@ -39,8 +39,8 @@ public class OrdenacaoTeste {
 
     @Test
     public void Teste03() {
-        int vetor[] = {70, 2, 88, 15, 90, 30};
-        int vetorOrdenado[] = {2, 15, 30, 70, 88, 90};
+        Comparable vetor[] = {70, 2, 88, 15, 90, 30};
+        Comparable vetorOrdenado[] = {2, 15, 30, 70, 88, 90};
         OrdenacaoQuickSort ordQuiSor = new OrdenacaoQuickSort();
         ordQuiSor.setInfo(vetor);
         ordQuiSor.ordernar();
@@ -49,8 +49,8 @@ public class OrdenacaoTeste {
 
     @Test
     public void Teste04() {
-        int vetor[] = {70, 2, 88, 15, 90, 30};
-        int vetorOrdenado[] = {2, 15, 30, 70, 88, 90};
+        Comparable vetor[] = {70, 2, 88, 15, 90, 30};
+        Comparable vetorOrdenado[] = {2, 15, 30, 70, 88, 90};
         OrdenacaoMergeSort ordMerSor = new OrdenacaoMergeSort();
         ordMerSor.setInfo(vetor);
         ordMerSor.ordernar();

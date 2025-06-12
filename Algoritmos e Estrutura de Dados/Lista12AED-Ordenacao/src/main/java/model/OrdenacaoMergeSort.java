@@ -8,7 +8,7 @@ package model;
  *
  * @author mdspezia
  */
-public class OrdenacaoMergeSort<T> extends OrdenacaoAbstract<T> {
+public class OrdenacaoMergeSort<T extends Comparable<T>> extends OrdenacaoAbstract<T> {
 
     @Override
     public void ordernar() {
@@ -27,13 +27,13 @@ public class OrdenacaoMergeSort<T> extends OrdenacaoAbstract<T> {
 
     private void merge(int inicio, int fim, int meio) {
         int tamEsquerda = meio - inicio + 1;
-        int esquerda[] = new int[tamEsquerda];
+        T esquerda[] = (T[]) new Comparable[tamEsquerda];
         for (int i = 0; i < tamEsquerda; i++) {
             esquerda[i] = getInfo()[inicio + i];
         }
 
         int tamDireita = fim - meio;
-        int direita[] = new int[tamDireita];
+        T direita[] = (T[]) new Comparable[tamDireita];
         for (int i = 0; i < tamDireita; i++) {
             direita[i] = getInfo()[meio + 1 + i];
         }
@@ -43,7 +43,7 @@ public class OrdenacaoMergeSort<T> extends OrdenacaoAbstract<T> {
 
         for (int i = inicio; i <= fim; i++) {
             if (cEsq < tamEsquerda && cDir < tamDireita) {
-                if (esquerda[cEsq] < direita[cDir]) {
+                if (esquerda[cEsq].compareTo(direita[cDir]) < 0) {
                     getInfo()[i] = esquerda[cEsq];
                     cEsq++;
                 } else {

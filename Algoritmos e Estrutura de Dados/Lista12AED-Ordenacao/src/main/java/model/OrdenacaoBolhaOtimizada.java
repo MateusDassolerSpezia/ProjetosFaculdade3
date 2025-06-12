@@ -8,7 +8,7 @@ package model;
  *
  * @author mdspezia
  */
-public class OrdenacaoBolhaOtimizada<T> extends OrdenacaoAbstract<T> {
+public class OrdenacaoBolhaOtimizada<T extends Comparable<T>> extends OrdenacaoAbstract<T> {
 
     @Override
     public void ordernar() {
@@ -19,7 +19,7 @@ public class OrdenacaoBolhaOtimizada<T> extends OrdenacaoAbstract<T> {
         for (i = n - 1; i >= 1; i--) {
             trocou = false;
             for (j = 0; j < i; j++) {
-                if (getInfo()[j] > getInfo()[j + 1]) {
+                if (getInfo()[j].compareTo(getInfo()[j + 1]) > 0) {
                     trocar(j, j + 1);
                     trocou = true;
                 }

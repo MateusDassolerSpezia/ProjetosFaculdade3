@@ -8,7 +8,7 @@ package model;
  *
  * @author mdspezia
  */
-public class OrdenacaoQuickSort<T> extends OrdenacaoAbstract<T> {
+public class OrdenacaoQuickSort<T extends Comparable<T>> extends OrdenacaoAbstract<T> {
 
     @Override
     public void ordernar() {
@@ -27,16 +27,16 @@ public class OrdenacaoQuickSort<T> extends OrdenacaoAbstract<T> {
     private int particionar(int inicio, int fim) {
         int a = inicio;
         int b = fim + 1;
-        int pivo = getInfo()[inicio];
+        T pivo = getInfo()[inicio];
 
         while (true) {
             do {
                 a++;
-            } while (a <= fim && getInfo()[a] < pivo);
+            } while (a <= fim && getInfo()[a].compareTo(pivo) < 0);
 
             do {
                 b--;
-            } while (b >= inicio && getInfo()[b] > pivo);
+            } while (b >= inicio && getInfo()[b].compareTo(pivo) > 0);
 
             if (a >= b) {
                 break;

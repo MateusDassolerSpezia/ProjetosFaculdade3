@@ -8,20 +8,20 @@ package model;
  *
  * @author mdspezia
  */
-public abstract class OrdenacaoAbstract<T> /*implements Comparable*/ {
+public abstract class OrdenacaoAbstract<T extends Comparable<T>> {
 
-    private int[] info;
+    private T[] info;
 
-    public int[] getInfo() {
+    public T[] getInfo() {
         return info;
     }
 
-    public void setInfo(int[] info) {
+    public void setInfo(T[] info) {
         this.info = info;
     }
 
     public void trocar(int a, int b) {
-        int temp = info[a];
+        T temp = info[a];
         info[a] = info[b];
         info[b] = temp;
     }
