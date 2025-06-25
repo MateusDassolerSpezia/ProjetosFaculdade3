@@ -3,14 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+
 import javax.swing.table.DefaultTableModel;
 import java.io.File;
 import model.AnalisadorHTML;
 import model.ContadorTags;
 import model.ResultadoAnalise;
+
 /**
  *
- * @author Mateus
+ * @author Mateus e Vinícius
  */
 public class TelaAnalisadorHTML extends javax.swing.JFrame {
 
@@ -39,6 +41,7 @@ public class TelaAnalisadorHTML extends javax.swing.JFrame {
         tabelaTags = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Analisador HTML");
 
         jLabel1.setText("Arquivo:");
 
@@ -49,21 +52,28 @@ public class TelaAnalisadorHTML extends javax.swing.JFrame {
             }
         });
 
+        txtResultado.setEditable(false);
         txtResultado.setColumns(20);
         txtResultado.setRows(5);
+        txtResultado.setFocusable(false);
         jScrollPane1.setViewportView(txtResultado);
 
         tabelaTags.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Tag", "Número de Ocorrências"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(tabelaTags);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -75,13 +85,13 @@ public class TelaAnalisadorHTML extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addComponent(txtArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAnalisar))
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,6 +109,7 @@ public class TelaAnalisadorHTML extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAnalisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalisarActionPerformed
@@ -142,12 +153,12 @@ public class TelaAnalisadorHTML extends javax.swing.JFrame {
             });
         }
     }
-    
+
     private void limparTabela() {
         DefaultTableModel model = (DefaultTableModel) tabelaTags.getModel();
         model.setRowCount(0);
     }
-    
+
     /**
      * @param args the command line arguments
      */
