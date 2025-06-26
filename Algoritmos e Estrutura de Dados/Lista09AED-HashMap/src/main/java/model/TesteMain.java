@@ -33,5 +33,10 @@ public class TesteMain {
         
         System.out.println("Igual = " + no1.equals(no2));
         System.out.println(mapa.buscar(100).getNome());
+        
+        MapaDispersao teste = new MapaDispersao(20);
+        teste.inserir(112, ob1);
+        teste.inserir(115, ob2);
+        teste.realocarMapa(10);
     }
 }

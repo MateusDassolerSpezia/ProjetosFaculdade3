@@ -27,7 +27,7 @@ public class MapaDispersao<T> {
         if (info[indice] == null) {
             info[indice] = new ListaEncadeada<>();
         }
-        
+
         NoMapa noMapa = new NoMapa();
         noMapa.setChave(chave);
         noMapa.setInfo(dado);
@@ -61,5 +61,25 @@ public class MapaDispersao<T> {
             }
         }
         return null;
+    }
+
+    public void realocarMapa(int novoTamanho) {
+        ListaEncadeada<NoMapa<T>>[] aux;
+        aux = new ListaEncadeada[novoTamanho]; // Criei o vetor auxiliar com o tamanho especificado
+
+        NoMapa noMapa = new NoMapa(); // Criei um NoMapa
+        
+        NoLista<NoMapa<T>> no; // Criei um NoLista<NoMapa<T>>
+
+        for (int i = 0; i < info.length; i++) { // For para percorrer o vetor atual
+            if (info[i] != null) { // Se na posição não tiver nenhum dado, não faz a transferência
+                no = info[i].getPrimeiro(); // 
+                //noMapa.setInfo(info[i]); 
+                noMapa.setChave(no.getInfo().getChave()); // 
+                int indice = noMapa.getChave() % novoTamanho; // Calculo do índice com a chave encontrada o novo tamanho 
+                aux[indice] = this.info[i]; // Transfere os dados do vetor atual para o vetor novo, utilizando o indice desse método para alocar os dados no local correto no novo vetor
+            }
+        }
+        info = aux; // Info referenciando o novo vetor
     }
 }
