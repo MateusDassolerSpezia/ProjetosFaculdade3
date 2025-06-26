@@ -73,9 +73,8 @@ public class MapaDispersao<T> {
 
         for (int i = 0; i < info.length; i++) { // For para percorrer o vetor atual
             if (info[i] != null) { // Se na posição não tiver nenhum dado, não faz a transferência
-                no = info[i].getPrimeiro(); // 
-                //noMapa.setInfo(info[i]); 
-                noMapa.setChave(no.getInfo().getChave()); // 
+                no = info[i].getPrimeiro(); // Pega toda a informação que está na lista do vetor atual
+                noMapa.setChave(no.getInfo().getChave()); // Pega a chave do dado que está na lista do vetor atual
                 int indice = noMapa.getChave() % novoTamanho; // Calculo do índice com a chave encontrada o novo tamanho 
                 aux[indice] = this.info[i]; // Transfere os dados do vetor atual para o vetor novo, utilizando o indice desse método para alocar os dados no local correto no novo vetor
             }
